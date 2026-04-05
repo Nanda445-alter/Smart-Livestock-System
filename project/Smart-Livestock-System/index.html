@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Livestock System - Setup</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .subtitle {
+            color: #666;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        .status {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .status-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .status-item:last-child { margin-bottom: 0; }
+        .status-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .status-icon.ok { background: #27ae60; }
+        .status-icon.loading { background: #f39c12; }
+        .status-icon.error { background: #e74c3c; }
+        .button {
+            display: inline-block;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .button-primary {
+            background: #667eea;
+            color: white;
+        }
+        .button-primary:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        .button-secondary {
+            background: #95a5a6;
+            color: white;
+        }
+        .button-secondary:hover {
+            background: #7f8c8d;
+        }
+        .info-box {
+            background: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #34495e;
+        }
+        .info-box strong { color: #2c3e50; }
+        .code {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐄 Smart Livestock Management System</h1>
+        <p class="subtitle">Production-Ready Academic Project</p>
+        
+        <div class="status">
+            <div class="status-item">
+                <div class="status-icon ok">✓</div>
+                <span>PHP Server: Running (v8.5.4)</span>
+            </div>
+            <div class="status-item">
+                <div class="status-icon ok">✓</div>
+                <span>Project Files: Ready</span>
+            </div>
+            <div class="status-item">
+                <div class="status-icon loading">⚙</div>
+                <span>MySQL: Initializing...</span>
+            </div>
+            <div class="status-item">
+                <div class="status-icon loading">⚙</div>
+                <span>Database: Pending Setup</span>
+            </div>
+        </div>
+        
+        <h2 style="font-size: 18px; margin: 20px 0 15px; color: #333;">Getting Started</h2>
+        
+        <button class="button button-primary" onclick="location.href='/backend/setup.php';">
+            🔧 Initialize Database
+        </button>
+        
+        <button class="button button-secondary" onclick="location.href='/frontend/index.html'; setTimeout(() => alert('Application loaded!'), 100);">
+            📱 Go to Application (after setup)
+        </button>
+
+        <button class="button button-secondary" onclick="location.href='/demo.html';">
+            🎯 View Algorithm Demos
+        </button>
+        
+        <div class="info-box">
+            <strong>First Time Setup:</strong><br>
+            1. Click "Initialize Database" to create tables and load sample data<br>
+            2. Wait for the setup to complete<br>
+            3. Click "Go to Application" to access the main interface<br>
+            4. Register or login with test account<br>
+            <br>
+            <strong>Test Credentials (all use same password):</strong><br>
+            Username: <code>farmer_john</code> | <code>farmer_sarah</code> | <code>farmer_mike</code><br>
+            Password: <code>password123</code><br>
+            <br>
+            <strong>Sample Data Highlights:</strong><br>
+            • 10 Animals (IDs 1-10) - Perfect for Binary Search demo<br>
+            • Supplements with easy ratios (2.0, 1.5, 1.0, 0.8) - Greedy Algorithm<br>
+            • 30 days milk data with clear trends - Dynamic Programming<br>
+            • 4 Farm network - Graph/BFS disease spread<br>
+            • 6 OS processes (burst: 4,6,8,10) - CPU Scheduling (RR quantum=2)
+        </div>
+
+        <div class="info-box" style="background: #fef5e7; border-left-color: #f39c12; color: #7d6608; margin-top: 15px;">
+            <strong>📚 Documentation:</strong><br>
+            • <a href="/README.md" style="color: #667eea; text-decoration: none;"><strong>README</strong></a> - Project overview and setup<br>
+            • <a href="/DOCUMENTATION.md" style="color: #667eea; text-decoration: none;"><strong>DOCUMENTATION</strong></a> - Technical details<br>
+            • <a href="/VIVA_QUESTIONS.md" style="color: #667eea; text-decoration: none;"><strong>VIVA_QUESTIONS</strong></a> - Q&A for exam prep<br>
+            • <a href="/PROFESSOR_GUIDE.md" style="color: #667eea; text-decoration: none;"><strong>PROFESSOR_GUIDE</strong></a> - Faculty explanation framework
+        </div>
+
+        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ecf0f1; text-align: center; color: #95a5a6; font-size: 12px;">
+            <p>Smart Livestock Management & Supplement Recommendation System</p>
+            <p>Integrating Web Technologies | DAA | Operating Systems</p>
+        </div>
+    </div>
+</body>
+</html>

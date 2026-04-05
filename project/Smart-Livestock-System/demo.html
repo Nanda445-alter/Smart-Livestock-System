@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithm Demos - Smart Livestock System</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+        h1 { text-align: center; color: #333; margin-bottom: 30px; }
+        .demo-section {
+            margin-bottom: 40px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .demo-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 5px;
+        }
+        .demo-content { margin-left: 20px; }
+        .code {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        .result {
+            background: #d4edda;
+            color: #155724;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            border: 1px solid #c3e6cb;
+        }
+        .highlight { background: #fff3cd; padding: 2px 4px; border-radius: 3px; }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #95a5a6;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .back-link:hover { background: #7f8c8d; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Algorithm Demonstration Examples</h1>
+
+        <div class="demo-section">
+            <div class="demo-title">1. Greedy Algorithm - Supplement Optimization</div>
+            <div class="demo-content">
+                <p><strong>Problem:</strong> Select supplements within ₹100 budget to maximize nutrition</p>
+                <p><strong>Supplements (Nutrition/Cost Ratio):</strong></p>
+                <div class="code">
+Premium Protein: 50g protein / ₹25 = <span class="highlight">Ratio: 2.0</span><br>
+Energy Boost: 30g protein / ₹20 = <span class="highlight">Ratio: 1.5</span><br>
+Basic Feed: 20g protein / ₹20 = <span class="highlight">Ratio: 1.0</span><br>
+Mineral Plus: 10g protein / ₹12.5 = <span class="highlight">Ratio: 0.8</span>
+                </div>
+                <p><strong>Greedy Choice:</strong> Sort by ratio descending</p>
+                <div class="result">
+Selection: Premium Protein (₹50) + Energy Boost (₹20) = ₹70<br>
+Nutrition Score: 80g protein | Remaining Budget: ₹30
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <div class="demo-title">2. Binary Search - Animal Lookup</div>
+            <div class="demo-content">
+                <p><strong>Problem:</strong> Find animal with ID = 7 in sorted array (IDs 1-10)</p>
+                <p><strong>Sorted Array:</strong> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</p>
+                <div class="code">
+Step 1: left=0, right=9, mid=4 (value=5) → 7 > 5, search right half<br>
+Step 2: left=5, right=9, mid=7 (value=8) → 7 < 8, search left half<br>
+Step 3: left=5, right=6, mid=5 (value=6) → 7 > 6, search right half<br>
+Step 4: left=6, right=6, mid=6 (value=7) → <span class="highlight">FOUND!</span>
+                </div>
+                <div class="result">
+Time Complexity: O(log n) = O(log 10) = O(3.32) ≈ 4 steps<br>
+Linear Search would take: O(n) = O(10) = up to 10 steps
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <div class="demo-title">3. Dynamic Programming - Milk Production Trend</div>
+            <div class="demo-content">
+                <p><strong>Problem:</strong> Predict tomorrow's milk production using 30-day history</p>
+                <p><strong>Sample Data (Bella - ID:1):</strong> Day 1-5: 18.0, 18.5, 19.0, 19.2, 19.5</p>
+                <div class="code">
+DP Table: dp[i] = max milk production up to day i<br>
+dp[1] = 18.0<br>
+dp[2] = max(dp[1] + 0.5, 18.5) = 18.5<br>
+dp[3] = max(dp[2] + 0.5, 19.0) = 19.0<br>
+dp[4] = max(dp[3] + 0.2, 19.2) = 19.2<br>
+dp[5] = max(dp[4] + 0.3, 19.5) = 19.5
+                </div>
+                <div class="result">
+Trend Analysis: Slope = +0.35 liters/day<br>
+Tomorrow Prediction: 19.5 + 0.35 = <span class="highlight">19.85 liters</span><br>
+Recommendation: <span class="highlight">Increase feed by 5%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <div class="demo-title">4. Graph/BFS - Disease Spread Simulation</div>
+            <div class="demo-content">
+                <p><strong>Problem:</strong> Simulate disease spread from Farm 1 (Green Valley)</p>
+                <p><strong>Farm Network:</strong></p>
+                <div class="code">
+Farm 1 (Green Valley) ── 2.5km ── Farm 2 (North Pasture)<br>
+│<br>
+3.0km<br>
+│<br>
+Farm 3 (Sunny Meadows) ── 4.2km ── Farm 4 (Blue Ridge)
+                </div>
+                <div class="result">
+BFS Traversal Order:<br>
+Day 0: Farm 1 infected (start)<br>
+Day 1: Farm 2 (2.5km) + Farm 3 (3.0km) infected<br>
+Day 2: Farm 4 (via Farm 3) infected<br>
+<span class="highlight">Total Spread Time: 2 days | Farms Affected: 4/4</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <div class="demo-title">5. OS: Round Robin CPU Scheduling</div>
+            <div class="demo-content">
+                <p><strong>Problem:</strong> Schedule 4 processes with Time Quantum = 2</p>
+                <p><strong>Processes:</strong> P1(4), P2(6), P3(8), P4(10)</p>
+                <div class="code">
+Time 0-2: P1 executes (remaining: 2)<br>
+Time 2-4: P2 executes (remaining: 4)<br>
+Time 4-6: P3 executes (remaining: 6)<br>
+Time 6-8: P4 executes (remaining: 8)<br>
+Time 8-10: P1 executes (remaining: 0) ← <span class="highlight">P1 COMPLETED</span><br>
+Time 10-12: P2 executes (remaining: 2)<br>
+Time 12-14: P3 executes (remaining: 4)<br>
+Time 14-16: P4 executes (remaining: 6)<br>
+Time 16-18: P2 executes (remaining: 0) ← <span class="highlight">P2 COMPLETED</span><br>
+Time 18-20: P3 executes (remaining: 2)<br>
+Time 20-22: P4 executes (remaining: 4)<br>
+Time 22-24: P3 executes (remaining: 0) ← <span class="highlight">P3 COMPLETED</span><br>
+Time 24-26: P4 executes (remaining: 2)<br>
+Time 26-28: P4 executes (remaining: 0) ← <span class="highlight">P4 COMPLETED</span>
+                </div>
+                <div class="result">
+Total Time: 28 units | Context Switches: 13<br>
+Average Waiting Time: (6+16+18+18)/4 = <span class="highlight">14.5 units</span><br>
+Fairness: Each process gets equal CPU time slices
+                </div>
+            </div>
+        </div>
+
+        <a href="/" class="back-link">← Back to Setup</a>
+    </div>
+</body>
+</html>
